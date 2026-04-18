@@ -20,6 +20,11 @@ void TwoLevelPageTable::loadPage(int pid, int pageNum, int frameNum) {
     pageMap[{pid, pageNum}] = frameNum;
 }
 
+void TwoLevelPageTable::removePage(int pid, int pageNum) {
+    memoryPages.erase({pid, pageNum});
+    pageMap.erase({pid, pageNum});
+}
+
 void TwoLevelPageTable::printStats() const {
     std::cout << "Pages in memory: " << memoryPages.size() << std::endl;
 }

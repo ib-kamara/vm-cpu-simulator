@@ -8,6 +8,7 @@ struct FrameEntry {
     int pageNumber;
     bool referenced;
     bool modified;
+    bool empty;
 };
 
 class Clock {
@@ -17,7 +18,7 @@ private:
 
 public:
     Clock(int frameCount);
-    int evictAndReplace(int pid, int pageNum, int& evictedPage, bool isModified);
+    int evictAndReplace(int pid, int pageNum, int& evictedPid, int& evictedPage, bool isModified);
 };
 
 #endif

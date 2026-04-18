@@ -16,6 +16,7 @@ public:
     bool isInMemory(int pid, int pageNum) const;
     int getFrame(int pid, int pageNum) const;
     void loadPage(int pid, int pageNum, int frameNum);
+    void removePage(int pid, int pageNum);
     void printStats() const;
 };
 
